@@ -15,7 +15,7 @@ Run from command line/terminal using:
 
 Adds Myo controls to Imgur.com through a Lua script.
 
-* **Pinky to Thumb** - Activate controls.
+* **Pinky to Thumb** - Activate/deactivate controls.
 * **Left Wave** - Previous image.
 * **Right Wave** - Next image.
 * **Spread Fingers** - Zoom image (if available).
