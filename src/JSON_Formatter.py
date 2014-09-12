@@ -4,6 +4,14 @@
 # Quick way of taking a JSON file written in one line
 # and formatting it nicely. Licensed under MIT License.
 
+# Known issues:
+# - Does not nest arrays of objects properly
+
+# Changelog:
+# 1.0 - Initial version
+# 1.1 - Fixed bug where recursiveBracket() did not count numbber
+#       of closing brackets
+
 import sys # sys used for command line arguments
 
 bracketLevel = 1 # amount of tabs a line needs
@@ -15,9 +23,15 @@ def recursiveBracket(toRead):
     toRead = toRead.split("{",1)
     outFile.write("\t"*bracketLevel + toRead[0].strip() + " {\n")
     bracketLevel += 1
-    
-    if toRead[1].find("{") != -1: # means another object is in entry
+
+    if toRead[1].find("{") != -1: # means another object is in property
         recursiveBracket(toRead[1])
+    elif toRead[1].find("}") != -1: # means only entry in property
+        noCloses = toRead[1].count("}")
+        outFile.write("\t"*(bracketLevel) + toRead[1].strip().replace("}","") + ",\n")
+        for i in range(0,noCloses):
+            bracketLevel -= 1
+            outFile.write("\t"*bracketLevel + "}\n")
     else:
         outFile.write("\t"*bracketLevel + toRead[1].strip() + ",\n")
 
@@ -35,8 +49,6 @@ if len(sys.argv) != 0: # Make sure there's command line arguments
                 fileContents[f] = fileContents[f].replace("{","",1)
                 break
 
-        # Clever solution from:
-        # http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string
         for l in range(len(fileContents)-1,-1,-1):
             if fileContents[l].find("}") != -1:
                 fileContents[l] = fileContents[l].replace("}","",1)
