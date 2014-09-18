@@ -1,4 +1,4 @@
-scriptId = 'es.lloydtorr.imgur'
+scriptId = 'com.lloydtorres.imgur'
 
 -- Lua script to enable browsing Imgur using the Myo.
 -- A lot of the code was taken from the Myo SDK docs.
