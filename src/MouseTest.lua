@@ -8,7 +8,8 @@ scriptId = 'com.thalmic.mousetest'
 
 -- Helpers
 
--- Forces waveOut = waveRight, waveIn = waveLeft regardless of arm
+-- Switches waveIn and waveOut for left arm to make wave gestures
+-- waveLeft and waveRight for both arms.
 function conditionallySwapWave(pose)
     if myo.getArm() == "left" then
         if pose == "waveIn" then
