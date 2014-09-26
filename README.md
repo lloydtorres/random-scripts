@@ -1,7 +1,7 @@
 random-scripts
 ==============
 
-Scripts I've written to deal with various problems.
+Scripts I've written to deal with various problems. These scripts are licensed under the MIT License unless otherwise noted.
 
 #### JSON_Formatter.py
 
