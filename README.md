@@ -9,11 +9,11 @@ Takes in a `.json` file containing a one-liner JSON file and creates a new file 
 
 Run from command line/terminal using:
 
-`$PATH/JSON_Formatter.py  <path of JSON file>`
+`python JSON_Formatter.py <path of JSON file>`
 
 #### MouseTest.lua
 
-A lot of devs at Hack the North had been asking for a sample mouse script for the Myo, so I've uploaded a simple script that enabled mouse control.
+A lot of devs at Hack the North had asked for a sample Lua mouse script for the Myo armband, so I uploaded a simple script that enabled mouse control.
 
 * **Pinky to Thumb** - Activate/deactivate controls.
 * **Left Wave** - Left-click.
