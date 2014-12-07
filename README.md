@@ -11,7 +11,7 @@ Run from command line/terminal using:
 
 `python JSON_Formatter.py <path of JSON file>`
 
-#### MouseTest.lua
+#### MouseControls.myo
 
 A lot of devs at Hack the North had asked for a sample Lua mouse script for the Myo armband, so I uploaded a simple script that enabled mouse control.
 
@@ -20,11 +20,10 @@ A lot of devs at Hack the North had asked for a sample Lua mouse script for the 
 * **Right Wave** - Right-click.
 * **Fist Hold/Release** - Click and drag.
 
-#### Myo_Imgur.lua
+#### Imgur.myo
 
-Adds Myo controls to Imgur.com through a Lua script.
+Adds Myo controls to Imgur.com through a Myo Connector.
 
-* **Pinky to Thumb** - Activate/deactivate controls.
 * **Left Wave** - Previous image.
 * **Right Wave** - Next image.
 * **Spread Fingers** - Zoom image (if available).

@@ -1,4 +1,7 @@
 scriptId = 'com.thalmic.mousetest'
+scriptTitle = 'Mouse Controls'
+
+myo.setLockingPolicy('none')
 
 -- This allows a user to control their cursor using the Myo.
 -- Gestures:
@@ -28,7 +31,7 @@ function onPoseEdge(pose, edge)
     pose = conditionallySwapWave(pose)
 
     -- Unlock/Lock Mechanism
-    if pose == "thumbToPinky" then
+    if pose == "doubleTap" then
         if not myo.mouseControlEnabled() then -- Unlock
             if edge == "off" then
                 myo.controlMouse(true)
@@ -52,13 +55,14 @@ function onPoseEdge(pose, edge)
 
         -- Left click
         if pose == "waveIn" and edge == "on" then
-            myo.vibrate("short")
+            myo.notifyUserAction()
             myo.mouse("left","click")
             myo.debug("LEFT")
         end
 
         -- Right click
         if pose == "waveOut" and edge == "on" then
+            myo.notifyUserAction()
             myo.mouse("right","click")
             myo.debug("RIGHT")
         end
@@ -66,7 +70,7 @@ function onPoseEdge(pose, edge)
         -- Click and drag
         if pose == "fist" then
             if edge == "on" then -- clicks down to drag
-                myo.vibrate("short")
+                myo.notifyUserAction()
                 myo.mouse("left","down")
                 myo.debug("DRAG HOLD")
             elseif edge == "off" then -- release click
