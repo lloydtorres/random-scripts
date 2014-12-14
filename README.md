@@ -15,7 +15,7 @@ Run from command line/terminal using:
 
 A lot of devs at Hack the North had asked for a sample Lua mouse script for the Myo armband, so I uploaded a simple script that enabled mouse control.
 
-* **Pinky to Thumb** - Activate/deactivate controls.
+* **Double Tap** - Activate/deactivate controls and recenter.
 * **Left Wave** - Left-click.
 * **Right Wave** - Right-click.
 * **Fist Hold/Release** - Click and drag.
